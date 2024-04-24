@@ -1,0 +1,60 @@
+:root {
+  /* Primary color shades */
+  --clr-primary-1: rgb(6, 50, 81);
+  --clr-primary-2: rgb(16, 78, 122);
+  /* Secondary color shades */
+  --clr-secondary: rgb(24, 5, 47);
+  --clr-grey-1: rgb(171, 171, 171);
+  --clr-grey-2: rgb(99, 99, 99);
+  /* White/black color shades */
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  /* Primary and secondary font families */
+  --ff-primary: "Roboto", sans-serif;
+  --ff-secondary: "Open Sans", sans-serif;
+  /* Commonly used CSS properties for consistency */
+  --transition: color ease-in-out 0.3s;
+  --spacing: 0.15rem;
+  --radius: 0.5rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.App {
+  font-family: var(--ff-secondary);
+  background-color: var(--clr-white);
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--clr-white);
+  transition: var(--transition);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover i {
+  color: var(--clr-primary-1);
+  transition: var(--transition);
+}
+
+i {
+  color: var(--clr-grey-1);
+  font-size: 1rem;
+  padding: 0.1rem;
+}
+
+i:hover {
+  cursor: pointer;
+  color: var(--clr-primary-1);
+  transition: var(--transition);
+}
+
+button {
+  border: transparent;
+}
