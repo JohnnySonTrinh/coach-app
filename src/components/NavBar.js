@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/logo.png";
 import styles from "../styles/NavBar.module.css";
-// import { NavLink } from "react-router-dom";
-
 import { NavLink } from "react-router-dom";
+import { CurrentUserContext } from "../App";
 
 function CustomNavLink({ children, to, ...props }) {
   return (
@@ -21,6 +20,17 @@ function CustomNavLink({ children, to, ...props }) {
 }
 
 const NavBar = () => {
+  const currentUser = useContext(CurrentUserContext);
+  const loggedInIcons = <>{currentUser?.username}</>;
+  const loggedOutIcons = (
+    <>
+      <CustomNavLink to="/signin">
+        {" "}
+        <i className="fa fa-sign-in"></i> Sign in{" "}
+      </CustomNavLink>
+    </>
+  );
+
   return (
     <Navbar expand="md" className={styles.NavBar} fixed="top">
       <Container fluid>
@@ -38,17 +48,12 @@ const NavBar = () => {
             navbarScroll
           >
             <CustomNavLink to="/">
-              {" "}
-              <i className="fa fa-house"></i> Home{" "}
-            </CustomNavLink>
-            <CustomNavLink to="/signin">
-              {" "}
-              <i className="fa fa-sign-in"></i> Sign in{" "}
+              <i className="fa fa-house"></i> Home
             </CustomNavLink>
             <CustomNavLink to="/newsletter">
-              {" "}
-              <i className="fa fa-envelope"></i> Newsletter{" "}
+              <i className="fa fa-envelope"></i> Newsletter
             </CustomNavLink>
+            {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
       </Container>
