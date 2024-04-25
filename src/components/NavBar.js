@@ -25,7 +25,7 @@ const NavBar = () => {
               <i className="fa fa-sign-in"></i>Sign in
             </Nav.Link>
             <Nav.Link>
-              <i className="fa fa-user-plus"></i>Sign up
+              <i className="fa fa-envelope"></i>Newsletter
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
