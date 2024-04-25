@@ -22,12 +22,9 @@ const SignUpForm = () => {
     password1: "",
     password2: "",
   });
+
   const { username, password1, password2 } = signUpData;
-
   const [errors, setError] = useState({});
-
-  const navigate = useNavigate();
-
   const handleChange = (event) => {
     setSignUpData({
       ...signUpData,
@@ -35,6 +32,7 @@ const SignUpForm = () => {
     });
   };
 
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -67,7 +65,6 @@ const SignUpForm = () => {
                 {message}
               </Alert>
             ))}
-
             <Form.Group className="mb-3" controlId="password1">
               <Form.Label className="d-none">Password</Form.Label>
               <Form.Control
@@ -84,7 +81,6 @@ const SignUpForm = () => {
                 {message}
               </Alert>
             ))}
-
             <Form.Group className="mb-3" controlId="password2">
               <Form.Label className="d-none">Confirm password</Form.Label>
               <Form.Control
@@ -101,7 +97,6 @@ const SignUpForm = () => {
                 {message}
               </Alert>
             ))}
-
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
@@ -128,6 +123,7 @@ const SignUpForm = () => {
         <Image
           className={`${appStyles.FillerImage}`}
           src={"https://i.imgur.com/rABMD1C.png"}
+          alt="logo"
         />
       </Col>
     </Row>
