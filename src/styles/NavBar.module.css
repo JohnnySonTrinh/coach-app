@@ -1,8 +1,19 @@
 .NavBar {
   background-color: #f8f9fa;
   border-bottom: 1px solid #e9ecef;
-  letter-spacing: var(--spacing);
 }
 .NavBar button {
   border: none;
+}
+
+.NavLink i,
+.NavLink a {
+  color: var(--clr-grey-1);
+  padding: 5px;
+  letter-spacing: var(--spacing);
+}
+
+.Active i,
+.Active a {
+  color: var(--clr-primary-1);
 }
