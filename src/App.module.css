@@ -25,19 +25,23 @@
   min-height: 100vh;
 }
 
+.Main {
+  padding-top: 81px;
+}
+
 * {
   box-sizing: border-box;
 }
 
 a {
-  color: var(--clr-white);
+  color: var(--clr-grey-1);
   transition: var(--transition);
-}
-
-a:hover {
   text-decoration: none;
+  letter-spacing: var(--spacing);
+  padding: 0.1rem;
 }
 
+a:hover,
 a:hover i {
   color: var(--clr-primary-1);
   transition: var(--transition);
